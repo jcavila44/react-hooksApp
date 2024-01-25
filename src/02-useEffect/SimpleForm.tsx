@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react"
+import { ChangeEvent, useEffect, useState } from "react"
 
 export const SimpleForm = () => {
 
@@ -9,15 +9,25 @@ export const SimpleForm = () => {
 
     const { userEmail, userName } = formState;
 
-
-
     const onChangeInput = ({ target }: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = target;
         setFormState({
             ...formState,
             [name]: value
-        })
+        });
     }
+
+    useEffect(() => {
+        console.log("Iniciamos");
+    }, []);
+
+    useEffect(() => {
+        console.log("Cambió el formulario");
+    }, [formState]);
+
+    useEffect(() => {
+        console.log("Cambió el userEmail");
+    }, [userEmail]);
 
     return (
         <>
