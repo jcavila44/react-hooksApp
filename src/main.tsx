@@ -8,10 +8,11 @@ import './index.css'
 // import { MultipleCustomHooks } from './03-examples';
 // import { FocusScreen } from './04-useRef';
 // import { Layout } from './05-useLayoutEffect';
-import { CallbackHook, MemoHook, Memorize } from './06-memos';
+// import { CallbackHook } from './06-memos';
+import { Padre } from './07-tarea-memo';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <CallbackHook />
-  </React.StrictMode>,
+  // <React.StrictMode>
+    <Padre />
+  // </React.StrictMode>,
 )

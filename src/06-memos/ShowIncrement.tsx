@@ -11,6 +11,6 @@ export const ShowIncrement = React.memo(({ increment }: IShowIncrement) => {
 
 
     return (
-        <button onClick={() => increment()} type="button" className="btn btn-info">Incrementar</button>
+        <button onClick={() => increment(5)} type="button" className="btn btn-info">Incrementar</button>
     )
 })

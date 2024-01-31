@@ -8,8 +8,8 @@ export const CallbackHook = () => {
 
 
     const incrementFather = useCallback(
-        () => {
-            setCounter((value) => value + 1)
+        (value: number) => {
+            setCounter((c) => c + value)
         },
         [],
     ); //Este es un complemento del memo para que cuando se pase una funcion no se renderice nuevamente sin necesidad. Importante no usarlo con el useEffect porque sería un ciclo infinito
