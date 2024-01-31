@@ -7,10 +7,11 @@ import './index.css'
 // import { FormWithCustomHook, SimpleForm } from './02-useEffect';
 // import { MultipleCustomHooks } from './03-examples';
 // import { FocusScreen } from './04-useRef';
-import { Layout } from './05-useLayoutEffect';
+// import { Layout } from './05-useLayoutEffect';
+import { Memorize } from './06-memos';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Layout />
+    <Memorize />
   </React.StrictMode>,
 )
