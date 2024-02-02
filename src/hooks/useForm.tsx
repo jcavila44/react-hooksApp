@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ChangeEvent, useState } from "react";
+import { useState } from "react";
 
 interface IFormValues {
     [key: string]: string;
@@ -9,8 +9,9 @@ export const useForm = <IinitialForm extends IFormValues>(initialForm: IinitialF
 
     const [formState, setFormState] = useState(initialForm);
 
-    const onChangeInput = ({ target }: ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = target;
+    const onChangeInput = (event: { target: { name: any; value: any; }; }) => {
+
+        const { name, value } = event.target;
         setFormState({
             ...formState,
             [name]: value
