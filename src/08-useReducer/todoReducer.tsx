@@ -2,9 +2,9 @@ export const todoReducer = (initialState = [], action) => {
 
 
     switch (action.type) {
-        case 'ABD':
+        case '[TODO] add todo':
 
-            throw new Error("ABD No está terminado mi papá");
+            return [...initialState, action.payload];
 
 
         default:

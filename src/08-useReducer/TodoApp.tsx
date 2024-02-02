@@ -1,32 +1,33 @@
-import { useReducer } from "react"
+import { useEffect, useReducer } from "react"
 import { TodoAdd, todoReducer } from ".";
 import { ITodo } from "./interface/todo.interface";
 import { TodoList } from "./TodoList";
 
 
 
-const initialState: ITodo[] = [
-    {
-        id: new Date().getTime(),
-        description: 'Sacar la basura',
-        done: false,
-    },
-    {
-        id: new Date().getTime() * 3,
-        description: 'Sacar al perro hpta',
-        done: false,
-    },
-];
+const initialState: ITodo[] = [];
+
+
 
 
 export const TodoApp = () => {
 
-
-    const [todos, dispatch] = useReducer(todoReducer, initialState);
-    const onNewTodo = (newTodo: ITodo) => {
-        console.log("lo mandaron xd", newTodo);
-
+    const init = () => {
+        return JSON.parse(localStorage.getItem('todos')) || [];
     }
+
+    const [todos, dispatch] = useReducer(todoReducer, initialState, init);
+
+
+    const onNewTodo = (newTodo: ITodo) => {
+        const action = { type: '[TODO] add todo', payload: newTodo };
+        dispatch(action);
+    }
+
+    useEffect(() => {
+        localStorage.setItem('todos', JSON.stringify(todos));
+    }, [todos])
+
 
     return (
         <>
