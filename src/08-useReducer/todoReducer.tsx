@@ -1,10 +1,16 @@
-export const todoReducer = (initialState = [], action) => {
+import { ITodo } from "./interface/todo.interface";
+
+export const todoReducer = (initialState: ITodo[] = [], { type, payload }: IReducerAction) => {
 
 
-    switch (action.type) {
+    switch (type) {
         case '[TODO] add todo':
 
-            return [...initialState, action.payload];
+            return [...initialState, payload];
+
+        case '[TODO] remove todo':
+
+            return initialState.filter(({ id }) => id !== payload);
 
 
         default:
