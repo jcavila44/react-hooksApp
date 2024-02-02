@@ -5,11 +5,11 @@ import { TodoList } from "./TodoList";
 
 export const TodoApp = () => {
 
-    const { todos, onCrossoutTodo, onDeleteTodo, onNewTodo } = useTodo([]);
+    const { todos, todosCount, pendingTodosCount, onCrossoutTodo, onDeleteTodo, onNewTodo } = useTodo([]);
 
     return (
         <>
-            <h1>TodoApp: 10 - <small>Pendientes: 2</small></h1>
+            <h1>TodoApp: {todosCount} - <small>Pendientes: {pendingTodosCount} </small></h1>
             <hr />
 
             <div className="row">

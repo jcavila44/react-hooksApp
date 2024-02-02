@@ -35,6 +35,8 @@ export const useTodo = (initialState = []) => {
 
   return {
     todos,
+    todosCount: todos.length,
+    pendingTodosCount: todos.filter((todo) => !todo.done).length,
     onNewTodo,
     onDeleteTodo,
     onCrossoutTodo,

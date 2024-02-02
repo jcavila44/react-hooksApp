@@ -9,7 +9,7 @@ export const TodoList = ({ todos, onDeleteTodo, onCrossoutTodo }) => {
         <>
             <ul className="list-group">
                 {
-                    todos.map(({ id, description, done }: ITodo, key) => (
+                    todos.map(({ id, description, done }: ITodo, key: number) => (
                         <TodoItem key={key} id={id} description={description} done={done} onDeleteTodo={onDeleteTodo} onCrossoutTodo={onCrossoutTodo} />
                     ))
                 }
