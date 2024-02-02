@@ -7,7 +7,7 @@ interface IHijo {
 
 export const Hijo = React.memo(({ numero, incrementar }: IHijo) => {
 
-    console.log('  Me volví a generar :(  ');
+    // console.log('  Me volví a generar :(  ');
 
     return (
         <button

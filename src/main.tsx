@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import './index.css'
-import './08-useReducer/intro-reducer.tsx'
+// import './08-useReducer/intro-reducer.tsx'
 // import { HooksApp } from './HooksApp';
 // import { CounterApp, CounterWithCustomHook } from './01-useState';
 // import { FormWithCustomHook, SimpleForm } from './02-useEffect';
@@ -11,9 +11,11 @@ import './08-useReducer/intro-reducer.tsx'
 // import { Layout } from './05-useLayoutEffect';
 // import { CallbackHook } from './06-memos';
 // import { Padre } from './07-tarea-memo';
+import { TodoApp } from './08-useReducer';
 
-// ReactDOM.createRoot(document.getElementById('root')!).render(
-//   // <React.StrictMode>
-//     <Padre />
-//   // </React.StrictMode>,
-// )
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+    // <React.StrictMode>
+    <TodoApp />
+    // </React.StrictMode>,
+)
