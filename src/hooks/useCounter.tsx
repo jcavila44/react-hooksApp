@@ -16,8 +16,8 @@ export const useCounter = (initialValue: number = 10): IuseCounter => {
 
     const [counter, setcounter] = useState(initialValue);
 
-    const increment = (value: number = 1): void => setcounter(counter + value);
-    const decrement = (value: number = 1): void => setcounter(counter - value);
+    const increment = (value: number = 1): void => setcounter((current) => current + value);
+    const decrement = (value: number = 1): void => setcounter((current) => current - value);
     const reset = (): void => setcounter(initialValue);
 
 
