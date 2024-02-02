@@ -1,39 +1,11 @@
-import { useEffect, useReducer } from "react"
-import { TodoAdd, todoReducer } from ".";
-import { ITodo } from "./interface/todo.interface";
+import { TodoAdd, useTodo } from ".";
 import { TodoList } from "./TodoList";
-
-
-
-const initialState: ITodo[] = [];
-
 
 
 
 export const TodoApp = () => {
 
-    const init = () => {
-        return JSON.parse(localStorage.getItem('todos')) || [];
-    }
-
-    const [todos, dispatch] = useReducer(todoReducer, initialState, init);
-
-
-    const onNewTodo = (newTodo: ITodo) => {
-        const action = { type: '[TODO] add todo', payload: newTodo };
-        dispatch(action);
-    }
-
-
-    const onDeleteTodo = (idTodo) => {
-        const action = { type: '[TODO] remove todo', payload: idTodo };
-        dispatch(action);
-    }
-
-    useEffect(() => {
-        localStorage.setItem('todos', JSON.stringify(todos));
-    }, [todos])
-
+    const { todos, onCrossoutTodo, onDeleteTodo, onNewTodo } = useTodo([]);
 
     return (
         <>
@@ -42,7 +14,7 @@ export const TodoApp = () => {
 
             <div className="row">
                 <div className="col-7">
-                    <TodoList todos={todos} onDeleteTodo={onDeleteTodo} />
+                    <TodoList todos={todos} onDeleteTodo={onDeleteTodo} onCrossoutTodo={onCrossoutTodo} />
                 </div>
 
                 <div className="col-5">

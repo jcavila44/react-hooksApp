@@ -1,12 +1,12 @@
 import { ITodo } from "./interface/todo.interface"
 import PropTypes from 'prop-types';
 
-export const TodoItem = ({ id, description, onDeleteTodo }) => {
+export const TodoItem = ({ id, description, done, onDeleteTodo, onCrossoutTodo }) => {
 
     return (
         <>
             <li key={id} className="list-group-item d-flex justify-content-between ">
-                <span className="align-self-center">{description}</span>
+                <span onClick={() => onCrossoutTodo(id)} className={`align-self-center ${done ? 'text-decoration-line-through' : ''}`}>{description}</span>
                 <button onClick={() => onDeleteTodo(id)} type="button" className="btn btn-danger">Borrar</button>
             </li>
         </>

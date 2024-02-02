@@ -2,7 +2,7 @@ import { TodoItem } from "./TodoItem";
 import { ITodo } from "./interface/todo.interface"
 import PropTypes from 'prop-types';
 
-export const TodoList = ({ todos = [], onDeleteTodo }) => {
+export const TodoList = ({ todos, onDeleteTodo, onCrossoutTodo }) => {
 
 
     return (
@@ -10,7 +10,7 @@ export const TodoList = ({ todos = [], onDeleteTodo }) => {
             <ul className="list-group">
                 {
                     todos.map(({ id, description, done }: ITodo, key) => (
-                        <TodoItem key={key} id={id} description={description} done={done} onDeleteTodo={onDeleteTodo} />
+                        <TodoItem key={key} id={id} description={description} done={done} onDeleteTodo={onDeleteTodo} onCrossoutTodo={onCrossoutTodo} />
                     ))
                 }
             </ul>
